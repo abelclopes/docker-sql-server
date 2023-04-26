@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y wget software-properties-common apt-tra
 RUN wget -qO- https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 RUN add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)"
 RUN apt-get update && apt-get install -y mssql-server
- 
+RUN apt-get install mssql-tools 
+
 # creating directories
 RUN mkdir /var/opt/sqlserver
 RUN mkdir /var/opt/sqlserver/data
